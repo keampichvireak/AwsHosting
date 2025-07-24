@@ -173,3 +173,7 @@ Get-ChildItem -Path "C:\Shared" | ForEach-Object {
 ---
 
 By following these steps, you'll clearly understand what exists in your environment pre-migration, easily detect any missing data post-migration, and have concrete evidence of migration success or issues.
+
+
+Set-ADOrganizationalUnit -Identity "OU=Marketing,DC=yourdomain,DC=com" -ProtectedFromAccidentalDeletion $false
+Remove-ADOrganizationalUnit -Identity "OU=Marketing,DC=yourdomain,DC=com" -Confirm:$false
